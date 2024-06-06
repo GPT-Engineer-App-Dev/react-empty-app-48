@@ -1,3 +1,21 @@
+/* supabase integration types
+
+Events // table: events
+    id: number
+    created_at: string
+    name: string
+    date: string
+    venue_id: number
+    is_starred: boolean
+
+Comments // table: comments
+    id: number
+    created_at: string
+    content: string
+    event_id: number // foreign key to Events
+
+*/
+
 import { createClient } from '@supabase/supabase-js';
 import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

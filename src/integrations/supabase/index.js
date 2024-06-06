@@ -17,27 +17,7 @@ const fromSupabase = async (query) => {
     return data;
 };
 
-/* supabase integration types
-
-// EXAMPLE TYPES SECTION
-// DO NOT USE TYPESCRIPT
-
-Events // table: events
-    id: number
-    created_at: string
-    name: string
-    date: string
-    venue_id: number
-    is_starred: boolean
-
-Comments // table: comments
-    id: number
-    created_at: string
-    content: string
-    event_id: number // foreign key to Events
-	
-*/
-
+// Hooks for Events table
 export const useEvents = () => useQuery({
     queryKey: ['events'],
     queryFn: () => fromSupabase(supabase.from('events').select('*')),
@@ -108,4 +88,3 @@ export const useDeleteComment = () => {
         },
     });
 };
-
